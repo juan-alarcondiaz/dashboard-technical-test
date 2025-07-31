@@ -1,0 +1,101 @@
+@use 'tokens';
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$spacing-lg;
+}
+
+.cards {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$spacing-md;
+}
+
+.cases {
+
+  gap: tokens.$spacing-lg;
+
+  &-card__header {
+    display: flex;
+    align-items: center;
+    gap: tokens.$spacing-lg;
+  }
+}
+
+
+.number {
+  font-size: 2.8rem;
+  font-weight: tokens.$font-weight-bold;
+}
+
+.input-search {
+  border: 1px solid tokens.$color-tertiary-text;
+}
+
+@media screen and (width >= 768px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "active-cases resolved-cases conversion-rate"
+                       "withholding-rate revenue profit-margin"
+                       "monthly-growth-rate cases cases"
+                       "cases-progress cases-progress average-resolution-time";
+  }
+
+  .active-cases {
+    grid-area: active-cases;
+  }
+
+  .resolved-cases {
+    grid-area: resolved-cases;
+  }
+
+  .conversion-rate {
+    grid-area: conversion-rate;
+  }
+
+  .withholding-rate {
+    grid-area: withholding-rate;
+  }
+
+  .revenue {
+    grid-area: revenue;
+  }
+
+  .profit-margin {
+    grid-area: profit-margin;
+  }
+
+  .monthly-growth-rate {
+    grid-area: monthly-growth-rate;
+  }
+
+  .cases  {
+    grid-area: cases;
+  }
+
+  .cases-progress {
+    grid-area: cases-progress;
+  }
+
+  .average-resolution-time {
+    grid-area: average-resolution-time;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .cards {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: tokens.$spacing-md;
+
+    grid-template-areas: "active-cases resolved-cases conversion-rate withholding-rate"
+                       "revenue revenue profit-margin monthly-growth-rate"
+                       "cases cases cases-progress average-resolution-time";
+  }
+}
+
+

@@ -1,0 +1,119 @@
+<div class="container">
+  <header>
+    <h1>Dashboard</h1>
+  </header>
+  <div class="cards">
+    <erp-card class="card--primary active-cases">
+      <ng-template #header>
+        <h2>Casos activos</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ activesCases() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary resolved-cases">
+      <ng-template #header>
+        <h2>Casos resueltos</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ resolvedCases() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary conversion-rate">
+      <ng-template #header>
+        <h2>Tasa de conversion</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ conversionRate() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary withholding-rate">
+      <ng-template #header>
+        <h2>Tasa de retencion</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ withholdingRate() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary revenue">
+      <ng-template #header>
+        <h2>Ingresos</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ revenue() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary profit-margin">
+      <ng-template #header>
+        <h2>Margen de beneficio</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ profitMargin() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary monthly-growth-rate">
+      <ng-template #header>
+        <h2>Tasa de crecimiento mensual</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ growthRate() }}</span>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary cases">
+      <ng-template #header>
+        <div class="cases-card__header">
+          <h2>Casos</h2>
+          <erp-input>
+            <label for="search"><ng-icon name="heroMagnifyingGlass"/></label>
+            <input id="search" type="search"  [(ngModel)]="searchText" class="input-search" placeholder="Buscar">
+          </erp-input>
+        </div>
+      </ng-template>
+      <ng-template #content>
+        <table>
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Titulo</th>
+              <th>Descripcion</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (case of cases() | filter: searchText; track case.id) {
+              <tr>
+                <td>{{ case.id }}</td>
+                <td>{{ case.title }}</td>
+                <td>{{ case.description }}</td>
+              </tr>
+            }
+          </tbody>
+        </table>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--secondary cases-progress">
+      <ng-template #header>
+        <h2>Progreso de casos</h2>
+      </ng-template>
+      <ng-template #content>
+        <erp-cases-progress-chart/>
+      </ng-template>
+    </erp-card>
+
+    <erp-card class="card--primary average-resolution-time">
+      <ng-template #header>
+        <h2>Tiempo promedio de resolucion</h2>
+      </ng-template>
+      <ng-template #content>
+        <span class="number">{{ averageResolutionTime() }}</span>
+      </ng-template>
+    </erp-card>
+  </div>
+</div>
