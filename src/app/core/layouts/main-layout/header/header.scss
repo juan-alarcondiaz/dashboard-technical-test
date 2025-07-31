@@ -1,0 +1,42 @@
+@use 'tokens';
+
+.header {
+  position: fixed;
+  top: tokens.$spacing-lg;
+  inset-inline: tokens.$spacing-lg;
+  padding: tokens.$spacing-md tokens.$spacing-lg;
+  display: flex;
+  justify-content: space-between;
+  border-radius: tokens.$radius-lg;
+  background: tokens.$color-tertiary;
+  transition: left 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  @media screen and (width >= 1440px) {
+    &--active {
+      left: 13rem;
+    }
+  }
+
+}
+
+.group, .user-actions {
+  display: inline-flex;
+}
+
+.group {
+  gap: tokens.$spacing-md;
+  align-items: center;
+
+  &__icon {
+    cursor: pointer;
+  }
+}
+
+.user-actions {
+  gap: tokens.$spacing-sm;
+
+  & .button {
+    border: none;
+  }
+}
+

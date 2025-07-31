@@ -1,0 +1,22 @@
+<header class="header" [class.header--active]="status()">
+  <div class="group">
+    <ng-icon class="group__icon" name="heroBars2" (click)="toggleStatus()"/>
+    <section aria-label="Busqueda">
+      <erp-input>
+        <label for="search"><ng-icon name="heroMagnifyingGlass"/></label>
+        <input id="search" type="search" placeholder="Buscar">
+      </erp-input>
+    </section>
+  </div>
+  <section class="user-actions" aria-label="Acciones de usuario">
+    <button class="button button--tertiary button--icon-only">
+      <ng-icon name="heroEnvelope"/>
+    </button>
+    <button class="button button--tertiary button--icon-only">
+      <ng-icon name="heroBell"/>
+    </button>
+    <button class="button button--tertiary button--icon-only">
+      <ng-icon name="heroUserCircleSolid"/>
+    </button>
+  </section>
+</header>
