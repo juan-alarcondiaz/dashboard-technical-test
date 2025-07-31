@@ -1,0 +1,17 @@
+<div class="backdrop" [class.backdrop--active]="status()" (click)="toggleSidebar.toggle()"></div>
+<nav class="nav" [class.nav--active]="status()">
+  <div class="logo">
+    <ng-icon class="logo__icon" size="2em" name="heroCube"/>
+    Company
+  </div>
+  <ul class="nav__list">
+    @for (item of items; track item.label) {
+      <li>
+        <a class="nav__link" [routerLink]="item.route" [routerLinkActive]="['nav__link--active']">
+          <ng-icon [svg]="item.icon"/>
+          {{ item.label }}
+        </a>
+      </li>
+    }
+  </ul>
+</nav>
