@@ -1,0 +1,11 @@
+@use 'tokens';
+
+table {
+  width: 100%;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+thead tr th {
+  border-block: 1px solid tokens.$color-white-950;
+}

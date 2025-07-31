@@ -1,0 +1,45 @@
+@use 'tokens';
+
+.button {
+  padding: tokens.$spacing-md tokens.$spacing-lg;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: tokens.$radius-xl;
+  cursor: pointer;
+
+  &--primary, &--secondary {
+    border-color: tokens.$color-amazon-700;
+  }
+
+  &--secondary, &--tertiary {
+    background-color: tokens.$color-secondary;
+  }
+
+  &--primary {
+    color: tokens.$color-primary-text;
+    background-color: tokens.$color-primary;
+  }
+
+  &--secondary {
+    color: tokens.$color-secondary-text;
+  }
+
+  &--tertiary {
+    color: tokens.$color-white-950;
+    border-color: tokens.$color-white-950;
+  }
+
+  &--with-icon, &--icon-only {
+    display: inline-flex;
+  }
+
+  &--with-icon {
+    align-items: center;
+    gap: tokens.$spacing-md;
+  }
+
+  &--icon-only {
+    padding-inline: tokens.$spacing-md;
+    border-radius: tokens.$radius-full;
+  }
+}

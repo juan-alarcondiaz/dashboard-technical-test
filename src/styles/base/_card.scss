@@ -1,0 +1,23 @@
+@use 'tokens';
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: tokens.$spacing-sm;
+  padding: tokens.$spacing-xl;
+  border-radius: tokens.$radius-xl;
+
+  &__header {
+    font-size: tokens.$font-size-xs;
+  }
+
+  &--primary {
+    color: tokens.$color-primary-text;
+    background: tokens.$color-primary;
+  }
+
+  &--secondary {
+    color: tokens.$color-white-950;
+    background: tokens.$color-secondary;
+  }
+}

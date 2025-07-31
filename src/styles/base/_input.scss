@@ -1,0 +1,26 @@
+@use 'tokens';
+
+label {
+  position: absolute;
+  display: flex;
+  left: tokens.$spacing-sm;
+}
+
+input {
+  border: none;
+  max-width: 200px;
+  text-indent: tokens.$spacing-2xl;
+  padding: tokens.$spacing-md;
+  border-radius: tokens.$radius-xl;
+  background: tokens.$color-secondary;
+}
+
+input:focus {
+  outline: 1px solid tokens.$color-white-950;
+}
+
+@media screen and (width >= 640px) {
+  input {
+    max-width: initial;
+  }
+}
