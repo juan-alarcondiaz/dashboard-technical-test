@@ -1,0 +1,22 @@
+@use 'tokens';
+
+.container {
+  width: 100%;
+  min-height: 100%;
+  padding: 6.5rem tokens.$spacing-lg tokens.$spacing-lg tokens.$spacing-lg;
+  transition: padding-left 300ms cubic-bezier(0.23, 1, 0.32, 1);
+
+  @media screen and (width >= 1440px) {
+    &--active {
+      padding-left: 13rem;
+    }
+  }
+}
+
+.main {
+  height: 100%;
+  padding: tokens.$spacing-lg;
+  background: tokens.$color-tertiary;
+  border-radius: tokens.$radius-lg;
+  background: tokens.$color-tertiary;
+}
